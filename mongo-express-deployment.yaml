@@ -53,8 +53,6 @@ metadata:
 spec:
   selector:
     app: mongo-express
-  externalIPs:
-    - 135.181.82.38
   ports:
     - protocol: TCP
       port: 8081
