@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mongo-express-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: mongo-express.heyyo.eu
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: mongo-express-service
+          servicePort: 8081
