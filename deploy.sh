@@ -5,4 +5,4 @@ kubectl apply -f mongodb-deployment.yaml
 kubectl apply -f mongo-configmap.yaml
 kubectl apply -f mongo-express-secret.yaml
 kubectl apply -f mongo-express-deployment.yaml
-kubectl app;y -f mongo-express-ingress.yaml
+kubectl apply -f mongo-express-ingress.yaml
