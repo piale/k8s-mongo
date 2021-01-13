@@ -49,3 +49,16 @@ wget https://docs.projectcalico.org/manifests/calico.yaml
 
 sudo sed -zi 's|            # - name: CALICO_IPV4POOL_CIDR\n            #   value: "192.168.0.0/16"|            - name: CALICO_IPV4POOL_CIDR\n              value: '"$PODS_SUBNET"'|' calico.yaml
 kubectl apply -f calico.yaml
+
+sudo apt-get install git -y
+
+git clone https://github.com/nginxinc/kubernetes-ingress/
+cd kubernetes-ingress/deployments
+git checkout v1.9.1
+kubectl apply -f common/ns-and-sa.yaml
+kubectl apply -f rbac/rbac.yaml
+
+kubectl apply -f common/default-server-secret.yaml
+kubectl apply -f common/nginx-config.yaml
+kubectl apply -f common/ingress-class.yaml
+kubectl apply -f daemon-set/nginx-ingress.yaml
