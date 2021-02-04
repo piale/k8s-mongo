@@ -11,8 +11,8 @@ export http_proxy=$PROXY
 export HTTP_PROXY=$PROXY
 export https_proxy=$PROXY
 export HTTPS_PROXY=$PROXY
-export no_proxy=localhost,127.0.0.1,.company.local,$K8S_IP_ADDRESS,$PODS_SUBNET,10.96.0.0/12
-export NO_PROXY=localhost,127.0.0.1,.company.local,$K8S_IP_ADDRESS,$PODS_SUBNET,10.96.0.0/12
+export no_proxy=localhost,127.0.0.1,.company.local,$K8S_IP_ADDRESS,$PODS_NETWORK,10.96.0.0/12
+export NO_PROXY=localhost,127.0.0.1,.company.local,$K8S_IP_ADDRESS,$PODS_NETWORK,10.96.0.0/12
 EOF
 
 source /etc/environment
